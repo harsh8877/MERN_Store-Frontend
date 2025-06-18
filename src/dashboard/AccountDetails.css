@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.subpage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eceef3;
+  padding-bottom: 16px;
+}
+.input-btn.custom-btn-secondary {
+  border: 1px solid #e4e6eb;
+  background-color: #fff;
+}
+.input-btn.md {
+  padding: 10px 16px;
+  min-width: 135px;
+}
+.input-btn.custom-btn-secondary .btn-text {
+  transition: 0.3s;
+}
+.input-btn .btn-text {
+  font-weight: 500;
+  font-size: 13px;
+}

@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page-404 {
+  text-align: center;
+  color: #323232;
+  font-size: 15px;
+  font-weight: 400;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

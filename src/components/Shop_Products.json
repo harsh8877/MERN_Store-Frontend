@@ -1,0 +1,142 @@
+[
+  {
+    "name": "Premium Selection",
+    "price": 1799,
+    "brand": "Trendsetter's Hub",
+    "description": "Description for premium selection",
+    "image": "src/images/img1.jpg"
+  },
+  {
+    "name": "Exclusive Product",
+    "price": 1199,
+    "brand": "Style Sanctuary",
+    "description": "Description for exclusive product",
+    "image": "src/images/img2.jpg"
+  },
+  {
+    "name": "Limited Edition",
+    "price": 1399,
+    "brand": "Chiv Haven",
+    "description": "Description for limited edition",
+    "image": "src/images/img3.jpg"
+  },
+  {
+    "name": "Special Edition",
+    "price": 1599,
+    "brand": "Vogue Vista",
+    "description": "Description for special edition",
+    "image": "src/images/img4.jpg"
+  },
+  {
+    "name": "Product X",
+    "price": 1099,
+    "brand": "Trendy Junction",
+    "description": "Description for product X",
+    "image": "src/images/img5.jpg"
+  },
+  {
+    "name": "New Item",
+    "price": 799,
+    "brand": "Fashionista's Den",
+    "description": "Description for new item",
+    "image": "src/images/img6.jpg"
+  },
+  {
+    "name": "Example Product 2",
+    "price": 1499,
+    "brand": "Trendsetter's Hub",
+    "description": "Description for example product 2",
+    "image": "src/images/img7.jpg"
+  },
+  {
+    "name": "Sample Product 2",
+    "price": 999,
+    "brand": "Modish Mania",
+    "description": "Sample description for product 1",
+    "image": "src/images/img8.jpg"
+  },
+  {
+    "name": "TSS Originals: Spirit Unique",
+    "price": 1299,
+    "brand": "The Souled Store",
+    "description": "Sample Description for product 78",
+    "image": "src/images/img3.jpg"
+  },
+  {
+    "name": "TSS Originals: Spirit Unique",
+    "price": 1299,
+    "brand": "The Souled Store",
+    "description": "Sample Description for product 78",
+    "image": "src/images/img3.jpg"
+  },
+  {
+    "name": "TSS Originals: Spirit Mosaic",
+    "price": 1299,
+    "brand": "The Souled Store",
+    "description": "demo",
+    "image": "src/images/img4.jpg"
+  },
+  {
+    "name": "TSS Originals: Moonlit Reflections",
+    "price": 1699,
+    "brand": "The Souled Store",
+    "description": "Reflect on the beauty of moonlit nights with Moonlit Reflections from TSS Originals",
+    "image": "src/images/img2.jpg"
+  },
+  {
+    "name": "TSS Originals: Radiant Blossoms",
+    "price": 1699,
+    "brand": "The Souled Store",
+    "description": "Let your style blossom with Radiant Blossoms from TSS Originals.",
+    "image": "src/images/img3.jpg"
+  },
+  {
+    "name": "TSS Originals: Golden Sands",
+    "price": 1799,
+    "brand": "The Souled Store",
+    "description": "Bask in the glow of Golden Sands from TSS Originals.",
+    "image": "src/images/img1.jpg"
+  },
+  {
+    "name": "TSS Originals: Mystic Forest",
+    "price": 1699,
+    "brand": "The Souled Store",
+    "description": "Unravel the mysteries of the forest with Mystic Forest from TSS Originals.",
+    "image": "src/images/img5.jpg"
+  },
+  {
+    "name": "TSS Originals: Wild Safari",
+    "price": 1599,
+    "brand": "The Souled Store",
+    "description": "Embark on a thrilling safari adventure with Wild Safari from TSS Originals.",
+    "image": "src/images/img6.jpg"
+  },
+  {
+    "name": "TSS Originals: Serene Meadows",
+    "price": 1499,
+    "brand": "The Souled Store",
+    "description": "Find peace and serenity with Serene Meadows from TSS Originals.",
+    "image": "src/images/img3.jpg"
+  },
+  {
+    "name": "TSS Originals: Aurora Borealis",
+    "price": 1799,
+    "brand": "The Souled Store",
+    "description": "Witness the stunning Aurora Borealis with this design from TSS Originals.",
+    "image": "src/images/img7.jpg"
+  },
+  {
+    "name": "Sample Product 1",
+    "price": 999,
+    "brand": "Modish Mania",
+    "description": "Sample Description for product 1",
+    "image": "src/images/img8.jpg"
+  },
+  {
+    "name": "TSS Originals: Serene Mosaic",
+    "price": 1299,
+    "brand": "The Souled Store",
+    "description": "demo",
+    "image": "src/images/img3.jpg"
+  }
+]
