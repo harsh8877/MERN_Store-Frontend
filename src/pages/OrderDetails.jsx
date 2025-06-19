@@ -21,7 +21,7 @@ const OrderDetails = () => {
       try {
         // 1. Fetch Order Details
         const orderRes = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/order/${orderId}`,
+          `${process.env.VITE_API_URL}/api/order/${orderId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -30,7 +30,7 @@ const OrderDetails = () => {
 
         // 2. Fetch Logged-in User Details (with role)
         const userRes = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/getuser`,
+          `${process.env.VITE_API_URL}/api/getuser`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -77,7 +77,7 @@ const OrderDetails = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .delete(`${process.env.REACT_APP_API_URL}/api/order/${orderId}`, {
+      .delete(`${process.env.VITE_API_URL}/api/order/${orderId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -99,7 +99,7 @@ const OrderDetails = () => {
 
     try {
       const res = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/order/${orderId}/item/${itemId}/status`,
+        `${process.env.VITE_API_URL}/api/order/${orderId}/item/${itemId}/status`,
         { status: newStatus },
         {
           headers: {

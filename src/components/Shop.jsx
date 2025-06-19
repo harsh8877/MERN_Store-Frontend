@@ -48,7 +48,7 @@ const Shop = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/getproduct`,
+        `${process.env.VITE_API_URL}/api/getproduct`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -94,7 +94,7 @@ const Shop = () => {
       }
 
       const response = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/wishlist`,
+        `${process.env.VITE_API_URL}/api/wishlist`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -175,7 +175,7 @@ const Shop = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_API_URL}/api/wishlist/toggle`,
+        `${process.env.VITE_API_URL}/api/wishlist/toggle`,
         { productId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

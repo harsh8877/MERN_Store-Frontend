@@ -80,7 +80,7 @@ const Address = () => {
       }
       if (editMode) {
         const res = await axios.put(
-          `${process.env.REACT_APP_API_URL}/api/address/${selectedId}`,
+          `${process.env.VITE_API_URL}/api/address/${selectedId}`,
           data,
           {
             headers: {
@@ -95,7 +95,7 @@ const Address = () => {
         }
       } else {
         const res = await axios.post(
-          `${process.env.REACT_APP_API_URL}/api/address`,
+          `${process.env.VITE_API_URL}/api/address`,
           data,
           {
             headers: {
@@ -140,7 +140,7 @@ const Address = () => {
       }
 
       const res = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/getaddress`,
+        `${process.env.VITE_API_URL}/api/getaddress`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -167,7 +167,7 @@ const Address = () => {
 
     try {
       const res = await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/address/${id}`,
+        `${process.env.VITE_API_URL}/api/address/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -53,7 +53,7 @@ const Merchants = () => {
       }
 
       // Submit new merchant
-      await axios.post(`${process.env.REACT_APP_API_URL}/api/merchants`, data, {
+      await axios.post(`${process.env.VITE_API_URL}/api/merchants`, data, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -61,7 +61,7 @@ const Merchants = () => {
 
       //  Immediately fetch updated merchant list from server
       const updatedList = await axios.get(
-        `${process.env.REACT_APP_API_URL}/api/getmerchants`,
+        `${process.env.VITE_API_URL}/api/getmerchants`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -83,7 +83,7 @@ const Merchants = () => {
   const toggleDisableMerchant = async (id) => {
     try {
       const response = await axios.put(
-        `${process.env.REACT_APP_API_URL}/api/merchants/${id}/disable`,
+        `${process.env.VITE_API_URL}/api/merchants/${id}/disable`,
         {},
         {
           headers: {
@@ -108,7 +108,7 @@ const Merchants = () => {
     const fetchMerchants = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/getmerchants`,
+          `${process.env.VITE_API_URL}/api/getmerchants`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -127,14 +127,11 @@ const Merchants = () => {
   const deleteMerchant = async (id) => {
     // if (window.confirm("Are you sure you want to delete this merchant?")) {
     try {
-      await axios.delete(
-        `${process.env.REACT_APP_API_URL}/api/merchants/${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
-      );
+      await axios.delete(`${process.env.VITE_API_URL}/api/merchants/${id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
       // Remove the deleted merchant from the state
       setMerchantList((prev) => prev.filter((m) => m._id !== id));
       toast.success("Merchant deleted successfully!");

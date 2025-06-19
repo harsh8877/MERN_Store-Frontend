@@ -34,7 +34,7 @@ const Main_Navbar = () => {
     const saveGoogleUser = async (user) => {
       try {
         const res = await fetch(
-          `${process.env.REACT_APP_API_URL}/api/save-google-user`,
+          `${process.env.VITE_API_URL}/api/save-google-user`,
           {
             method: "POST",
             headers: {

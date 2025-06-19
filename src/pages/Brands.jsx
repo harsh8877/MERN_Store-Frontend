@@ -17,7 +17,7 @@ const Brands = () => {
     const fetchBrands = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/getbrand`,
+          `${process.env.VITE_API_URL}/getbrand`,
           {
             brand: brandFilter,
           }

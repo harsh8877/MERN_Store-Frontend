@@ -18,7 +18,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const response = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/getusers`,
+          `${process.env.VITE_API_URL}/api/getusers`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,

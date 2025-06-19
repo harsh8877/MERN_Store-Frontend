@@ -12,7 +12,7 @@ const OrderSuccess = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/order/${orderId}`, {
+      .get(`${process.env.VITE_API_URL}/api/order/${orderId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

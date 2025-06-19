@@ -14,7 +14,7 @@ const Order = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch(`${process.env.REACT_APP_API_URL}/api/orders`, {
+    fetch(`${process.env.VITE_API_URL}/api/orders`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

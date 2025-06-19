@@ -15,7 +15,7 @@ const WishList = () => {
 
       try {
         const res = await axios.get(
-          `${process.env.REACT_APP_API_URL}/api/wishlist`,
+          `${process.env.VITE_API_URL}/api/wishlist`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
