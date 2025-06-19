@@ -21,7 +21,7 @@ const OrderDetails = () => {
       try {
         // 1. Fetch Order Details
         const orderRes = await axios.get(
-          `http://localhost:5000/api/order/${orderId}`,
+          `${process.env.REACT_APP_API_URL}/api/order/${orderId}`,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
@@ -29,9 +29,12 @@ const OrderDetails = () => {
         setOrder(orderRes.data);
 
         // 2. Fetch Logged-in User Details (with role)
-        const userRes = await axios.get("http://localhost:5000/api/getuser", {
-          headers: { Authorization: `Bearer ${token}` },
-        });
+        const userRes = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/getuser`,
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
         setUserRole(userRes.data.role); // e.g., "admin", "member", etc.
         // console.log(res.data.role);
       } catch (err) {
@@ -74,7 +77,7 @@ const OrderDetails = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .delete(`http://localhost:5000/api/order/${orderId}`, {
+      .delete(`${process.env.REACT_APP_API_URL}/api/order/${orderId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -96,7 +99,7 @@ const OrderDetails = () => {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/api/order/${orderId}/item/${itemId}/status`,
+        `${process.env.REACT_APP_API_URL}/api/order/${orderId}/item/${itemId}/status`,
         { status: newStatus },
         {
           headers: {

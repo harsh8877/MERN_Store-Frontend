@@ -14,11 +14,14 @@ const WishList = () => {
       if (!token) return;
 
       try {
-        const res = await axios.get("http://localhost:5000/api/wishlist", {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+        const res = await axios.get(
+          `${process.env.REACT_APP_API_URL}/api/wishlist`,
+          {
+            headers: {
+              Authorization: `Bearer ${token}`,
+            },
+          }
+        );
         // const wishlistIds = res.data.wishlist.map((item) => item._id);
 
         // console.log("Fetched wishlist:", res.data.wishlist);

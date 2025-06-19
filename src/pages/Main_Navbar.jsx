@@ -33,19 +33,22 @@ const Main_Navbar = () => {
   useEffect(() => {
     const saveGoogleUser = async (user) => {
       try {
-        const res = await fetch("http://localhost:5000/api/save-google-user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: user.name,
-            email: user.email,
-            password: user.password,
-            picture: user.picture,
-            sub: user.sub,
-          }),
-        });
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/save-google-user`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: user.name,
+              email: user.email,
+              password: user.password,
+              picture: user.picture,
+              sub: user.sub,
+            }),
+          }
+        );
 
         const result = await res.json();
         console.log("Backend response : ", result);

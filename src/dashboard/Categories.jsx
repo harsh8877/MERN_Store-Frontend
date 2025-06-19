@@ -115,7 +115,7 @@ const Categories = () => {
 
       if (isEditing) {
         response = await axios.put(
-          `http://localhost:5000/api/category/${editingId}`,
+          `${process.env.REACT_APP_API_URL}/api/category/${editingId}`,
           categoryData,
           {
             headers: {
@@ -125,7 +125,7 @@ const Categories = () => {
         );
       } else {
         response = await axios.post(
-          "http://localhost:5000/api/category",
+          `${process.env.REACT_APP_API_URL}/api/category`,
           categoryData,
           {
             headers: {
@@ -164,7 +164,7 @@ const Categories = () => {
   const fetchCategories = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/getcategory",
+        `${process.env.REACT_APP_API_URL}/api/getcategory`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -193,7 +193,7 @@ const Categories = () => {
 
     try {
       const res = await axios.delete(`
-          http://localhost:5000/api/category/${editingId}`);
+          ${process.env.REACT_APP_API_URL}/api/category/${editingId}`);
       if (res.data.success) {
         toast.success("Category deleted successfully");
         resetForm();

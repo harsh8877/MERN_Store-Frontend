@@ -20,7 +20,7 @@ const CartSheet = () => {
     // }
 
     axios
-      .get(`http://localhost:5000/api/getproduct/${id}`, {
+      .get(`${process.env.REACT_APP_API_URL}/api/getproduct/${id}`, {
         // headers: {
         //   Authorization: `Bearer ${localStorage.getItem("token")}`,
         // },
@@ -47,7 +47,7 @@ const CartSheet = () => {
 
     axios
       .post(
-        "http://localhost:5000/api/placeorder",
+        `${process.env.REACT_APP_API_URL}/api/placeorder`,
         { items },
         {
           headers: {

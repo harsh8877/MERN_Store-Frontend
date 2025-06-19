@@ -141,8 +141,8 @@ const Products = () => {
     try {
       const method = isEditMode ? "put" : "post";
       const url = isEditMode
-        ? `http://localhost:5000/api/product/${productData._id}`
-        : "http://localhost:5000/api/product";
+        ? `${process.env.REACT_APP_API_URL}/api/product/${productData._id}`
+        : `${process.env.REACT_APP_API_URL}/api/product`;
 
       const token = localStorage.getItem("token");
       if (!token) {
@@ -202,11 +202,14 @@ const Products = () => {
     }
 
     try {
-      const response = await axios.get("http://localhost:5000/api/getproduct", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/getproduct`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log("API Response:", response.data);
       if (response.data.success && Array.isArray(response.data.products)) {
         setProducts(response.data.products);
@@ -227,7 +230,7 @@ const Products = () => {
     // if (window.confirm("Are you sure you want to delete this product?")) {
     try {
       const response = await axios.delete(
-        `http://localhost:5000/api/product/${productId}`,
+        `${process.env.REACT_APP_API_URL}/api/product/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

@@ -47,23 +47,26 @@ const Shop = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/getproduct", {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/getproduct`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
 
-        params: {
-          page: currentPage,
-          limit: productsPerPage,
-          search: searchTerm,
-          sort: getSortValue(),
-          brand: brandFilter,
-          category: categoryFilter,
-          maxPrice: priceLimit,
-          minRating: ratingRange[0],
-          maxRating: ratingRange[1],
-        },
-      });
+          params: {
+            page: currentPage,
+            limit: productsPerPage,
+            search: searchTerm,
+            sort: getSortValue(),
+            brand: brandFilter,
+            category: categoryFilter,
+            maxPrice: priceLimit,
+            minRating: ratingRange[0],
+            maxRating: ratingRange[1],
+          },
+        }
+      );
 
       console.log("RESPONSES : ", response.data);
       setProducts(response.data.products || []);
@@ -90,9 +93,12 @@ const Shop = () => {
         return;
       }
 
-      const response = await axios.get("http://localhost:5000/api/wishlist", {
-        headers: { Authorization: `Bearer ${token}` },
-      });
+      const response = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/wishlist`,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
       const wishlistProducts = response.data.wishlist || [];
 
       setWishlistedProducts(wishlistProducts.map((p) => p._id));
@@ -169,7 +175,7 @@ const Shop = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/wishlist/toggle",
+        `${process.env.REACT_APP_API_URL}/api/wishlist/toggle`,
         { productId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

@@ -22,7 +22,7 @@ const Seller = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post("http://localhost:5000/api/seller", data, {
+      await axios.post(`${process.env.REACT_APP_API_URL}/api/seller`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

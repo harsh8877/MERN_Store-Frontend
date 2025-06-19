@@ -26,7 +26,7 @@ const AccountDetails = () => {
   const fetchUserData = () => {
     if (email) {
       axios
-        .get(`http://localhost:5000/api/getuser/${email}`)
+        .get(`${process.env.REACT_APP_API_URL}/api/getuser/${email}`)
         .then((res) => {
           const userData = res.data;
 
@@ -49,7 +49,7 @@ const AccountDetails = () => {
 
   const onSubmit = (formData) => {
     axios
-      .put(`http://localhost:5000/api/updateuser/${email}`, formData)
+      .put(`${process.env.REACT_APP_API_URL}/api/updateuser/${email}`, formData)
       .then(() => {
         toast.success("Account details updated successfully!");
         fetchUserData(); // Refresh Data

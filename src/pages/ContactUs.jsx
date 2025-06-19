@@ -21,7 +21,7 @@ const ContactUs = () => {
   const onSubmit = async (data) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/contactus",
+        `${process.env.REACT_APP_API_URL}/api/contactus`,
         data,
         {
           headers: {

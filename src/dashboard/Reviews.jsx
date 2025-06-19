@@ -14,7 +14,7 @@ const Reviews = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get("http://localhost:5000/api/getreviews", {
+      .get(`${process.env.REACT_APP_API_URL}/api/getreviews`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ const Reviews = () => {
   const handleDelete = async (reviewId) => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/deletereviews/${reviewId}`,
+        `${process.env.REACT_APP_API_URL}/api/deletereviews/${reviewId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

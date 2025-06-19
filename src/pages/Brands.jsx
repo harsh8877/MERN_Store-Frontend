@@ -16,9 +16,12 @@ const Brands = () => {
   useEffect(() => {
     const fetchBrands = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/getbrand", {
-          brand: brandFilter,
-        });
+        const response = await axios.get(
+          `${process.env.REACT_APP_API_URL}/getbrand`,
+          {
+            brand: brandFilter,
+          }
+        );
         setBrands(response.data);
       } catch (error) {
         console.error("Error fetching brands : ", error);

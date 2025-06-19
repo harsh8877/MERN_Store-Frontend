@@ -36,7 +36,7 @@ const ProductDetails = () => {
     // }
 
     axios
-      .get(`http://localhost:5000/api/getproduct/${id}`, {
+      .get(`${process.env.REACT_APP_API_URL}/api/getproduct/${id}`, {
         // headers: {
         //   Authorization: `Bearer ${localStorage.getItem("token")}`,
         // },
@@ -72,7 +72,7 @@ const ProductDetails = () => {
 
     try {
       await axios.post(
-        "http://localhost:5000/api/addreview",
+        `${process.env.REACT_APP_API_URL}/api/addreview`,
         {
           product: id,
           ...data,

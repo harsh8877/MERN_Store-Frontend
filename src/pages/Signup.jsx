@@ -27,7 +27,7 @@ const Signup = () => {
   const { setAuth, setIsLoggedIn } = useContext(AuthContext);
 
   const onSubmit = async (data) => {
-    const res = await fetch("http://localhost:5000/api/signup", {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/api/signup`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
@@ -46,18 +46,21 @@ const Signup = () => {
   useEffect(() => {
     const saveGoogleUser = async (user) => {
       try {
-        const res = await fetch("http://localhost:5000/api/save-google-user", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: user.name,
-            email: user.email,
-            picture: user.picture,
-            sub: user.sub,
-          }),
-        });
+        const res = await fetch(
+          `${process.env.REACT_APP_API_URL}/api/save-google-user`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              name: user.name,
+              email: user.email,
+              picture: user.picture,
+              sub: user.sub,
+            }),
+          }
+        );
 
         const result = await res.json();
         if (res.ok) {

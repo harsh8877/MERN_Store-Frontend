@@ -80,7 +80,7 @@ const Address = () => {
       }
       if (editMode) {
         const res = await axios.put(
-          `http://localhost:5000/api/address/${selectedId}`,
+          `${process.env.REACT_APP_API_URL}/api/address/${selectedId}`,
           data,
           {
             headers: {
@@ -95,7 +95,7 @@ const Address = () => {
         }
       } else {
         const res = await axios.post(
-          "http://localhost:5000/api/address",
+          `${process.env.REACT_APP_API_URL}/api/address`,
           data,
           {
             headers: {
@@ -139,11 +139,14 @@ const Address = () => {
         return;
       }
 
-      const res = await axios.get("http://localhost:5000/api/getaddress", {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.get(
+        `${process.env.REACT_APP_API_URL}/api/getaddress`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       setAddressList(res.data);
     } catch (err) {
       console.error("Error Fetching Address : ", err);
@@ -164,7 +167,7 @@ const Address = () => {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5000/api/address/${id}`,
+        `${process.env.REACT_APP_API_URL}/api/address/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

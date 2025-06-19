@@ -29,7 +29,7 @@ const AccountSecurity = () => {
 
     try {
       const res = await axios.post(
-        `http://localhost:5000/api/reset-password`,
+        `${process.env.REACT_APP_API_URL}/api/reset-password`,
         { password: data.password },
         {
           headers: {
