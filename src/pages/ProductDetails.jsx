@@ -36,7 +36,7 @@ const ProductDetails = () => {
     // }
 
     axios
-      .get(`${process.env.VITE_API_URL}/api/getproduct/${id}`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/getproduct/${id}`, {
         // headers: {
         //   Authorization: `Bearer ${localStorage.getItem("token")}`,
         // },
@@ -72,7 +72,7 @@ const ProductDetails = () => {
 
     try {
       await axios.post(
-        `${process.env.VITE_API_URL}/api/addreview`,
+        `${import.meta.env.VITE_API_URL}/api/addreview`,
         {
           product: id,
           ...data,

@@ -21,6 +21,8 @@ const Shop = () => {
   const [wishlistedProducts, setWishlistedProducts] = useState([]); // State to manage wishlisted products
   const navigate = useNavigate();
 
+  console.log("prrocess:::", import.meta.env.VITE_API_URL);
+
   const productsPerPage = 10;
 
   const handleSliderChange = (event, newValue) => {
@@ -48,7 +50,7 @@ const Shop = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        `${process.env.VITE_API_URL}/api/getproduct`,
+        `${import.meta.env.VITE_API_URL}/api/getproduct`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -94,7 +96,7 @@ const Shop = () => {
       }
 
       const response = await axios.get(
-        `${process.env.VITE_API_URL}/api/wishlist`,
+        `${import.meta.env.VITE_API_URL}/api/wishlist`,
         {
           headers: { Authorization: `Bearer ${token}` },
         }
@@ -175,7 +177,7 @@ const Shop = () => {
 
     try {
       const response = await axios.post(
-        `${process.env.VITE_API_URL}/api/wishlist/toggle`,
+        `${import.meta.env.VITE_API_URL}/api/wishlist/toggle`,
         { productId },
         { headers: { Authorization: `Bearer ${token}` } }
       );

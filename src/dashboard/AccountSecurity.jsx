@@ -29,7 +29,7 @@ const AccountSecurity = () => {
 
     try {
       const res = await axios.post(
-        `${process.env.VITE_API_URL}/api/reset-password`,
+        `${import.meta.env.VITE_API_URL}/api/reset-password`,
         { password: data.password },
         {
           headers: {

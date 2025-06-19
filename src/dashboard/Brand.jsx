@@ -55,7 +55,7 @@ const Brand = () => {
       if (editMode) {
         // Edit the existing brand
         const res = await axios.put(
-          `${process.env.VITE_API_URL}/api/brand/${selectedBrandId}`,
+          `${import.meta.env.VITE_API_URL}/api/brand/${selectedBrandId}`,
           data,
           {
             headers: {
@@ -72,7 +72,7 @@ const Brand = () => {
       } else {
         // Add new brand
         const res = await axios.post(
-          `${process.env.VITE_API_URL}/api/brand`,
+          `${import.meta.env.VITE_API_URL}/api/brand`,
           data,
           {
             headers: {
@@ -108,11 +108,14 @@ const Brand = () => {
 
   const fetchBrands = async () => {
     try {
-      const res = await axios.get(`${process.env.VITE_API_URL}/api/getbrand`, {
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/getbrand`,
+        {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
       console.log("Fetched Brands:", res.data);
       setBrands(res.data);
     } catch (err) {
@@ -127,7 +130,7 @@ const Brand = () => {
   const deleteBrand = async (id) => {
     try {
       const res = await axios.delete(
-        `${process.env.VITE_API_URL}/api/brand/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/brand/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

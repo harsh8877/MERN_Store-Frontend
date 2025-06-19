@@ -12,7 +12,7 @@ const OrderSuccess = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`${process.env.VITE_API_URL}/api/order/${orderId}`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/order/${orderId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

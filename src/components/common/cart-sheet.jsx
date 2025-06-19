@@ -20,7 +20,7 @@ const CartSheet = () => {
     // }
 
     axios
-      .get(`${process.env.VITE_API_URL}/api/getproduct/${id}`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/getproduct/${id}`, {
         // headers: {
         //   Authorization: `Bearer ${localStorage.getItem("token")}`,
         // },
@@ -47,7 +47,7 @@ const CartSheet = () => {
 
     axios
       .post(
-        `${process.env.VITE_API_URL}/api/placeorder`,
+        `${import.meta.env.VITE_API_URL}/api/placeorder`,
         { items },
         {
           headers: {

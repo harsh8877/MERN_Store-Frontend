@@ -14,7 +14,7 @@ const Reviews = () => {
     const token = localStorage.getItem("token");
 
     axios
-      .get(`${process.env.VITE_API_URL}/api/getreviews`, {
+      .get(`${import.meta.env.VITE_API_URL}/api/getreviews`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -30,7 +30,7 @@ const Reviews = () => {
   const handleDelete = async (reviewId) => {
     try {
       await axios.delete(
-        `${process.env.VITE_API_URL}/api/deletereviews/${reviewId}`,
+        `${import.meta.env.VITE_API_URL}/api/deletereviews/${reviewId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

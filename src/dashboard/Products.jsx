@@ -141,8 +141,8 @@ const Products = () => {
     try {
       const method = isEditMode ? "put" : "post";
       const url = isEditMode
-        ? `${process.env.VITE_API_URL}/api/product/${productData._id}`
-        : `${process.env.VITE_API_URL}/api/product`;
+        ? `${import.meta.env.VITE_API_URL}/api/product/${productData._id}`
+        : `${import.meta.env.VITE_API_URL}/api/product`;
 
       const token = localStorage.getItem("token");
       if (!token) {
@@ -203,7 +203,7 @@ const Products = () => {
 
     try {
       const response = await axios.get(
-        `${process.env.VITE_API_URL}/api/getproduct`,
+        `${import.meta.env.VITE_API_URL}/api/getproduct`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -230,7 +230,7 @@ const Products = () => {
     // if (window.confirm("Are you sure you want to delete this product?")) {
     try {
       const response = await axios.delete(
-        `${process.env.VITE_API_URL}/api/product/${productId}`,
+        `${import.meta.env.VITE_API_URL}/api/product/${productId}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,

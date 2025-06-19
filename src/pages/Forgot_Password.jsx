@@ -23,7 +23,7 @@ const Forgot_Password = () => {
     // e.preventDefault();
     try {
       const res = await axios.post(
-        `${process.env.VITE_API_URL}/api/forgot-password`,
+        `${import.meta.env.VITE_API_URL}/api/forgot-password`,
         {
           email: data.email,
         }

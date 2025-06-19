@@ -22,7 +22,7 @@ const Seller = () => {
 
   const onSubmit = async (data) => {
     try {
-      await axios.post(`${process.env.VITE_API_URL}/api/seller`, data, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/seller`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

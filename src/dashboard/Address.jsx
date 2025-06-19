@@ -80,7 +80,7 @@ const Address = () => {
       }
       if (editMode) {
         const res = await axios.put(
-          `${process.env.VITE_API_URL}/api/address/${selectedId}`,
+          `${import.meta.env.VITE_API_URL}/api/address/${selectedId}`,
           data,
           {
             headers: {
@@ -95,7 +95,7 @@ const Address = () => {
         }
       } else {
         const res = await axios.post(
-          `${process.env.VITE_API_URL}/api/address`,
+          `${import.meta.env.VITE_API_URL}/api/address`,
           data,
           {
             headers: {
@@ -140,7 +140,7 @@ const Address = () => {
       }
 
       const res = await axios.get(
-        `${process.env.VITE_API_URL}/api/getaddress`,
+        `${import.meta.env.VITE_API_URL}/api/getaddress`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -167,7 +167,7 @@ const Address = () => {
 
     try {
       const res = await axios.delete(
-        `${process.env.VITE_API_URL}/api/address/${id}`,
+        `${import.meta.env.VITE_API_URL}/api/address/${id}`,
         {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
