@@ -21,8 +21,6 @@ const Shop = () => {
   const [wishlistedProducts, setWishlistedProducts] = useState([]); // State to manage wishlisted products
   const navigate = useNavigate();
 
-  console.log("prrocess:::", import.meta.env.VITE_API_URL);
-
   const productsPerPage = 10;
 
   const handleSliderChange = (event, newValue) => {

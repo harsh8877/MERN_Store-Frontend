@@ -99,8 +99,8 @@ const Main_Navbar = () => {
       role: null,
     });
 
-    logout({ returnTo: window.location.origin });
-    // navigate("/login");
+    // logout({ returnTo: window.location.origin });
+    navigate("/login");
   };
 
   const handleClose = () => setShow(false);
