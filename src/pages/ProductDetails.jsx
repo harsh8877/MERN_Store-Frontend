@@ -106,7 +106,9 @@ const ProductDetails = () => {
               <div className="flex-row row">
                 <div className="mb-3 px-3 px-md-2 col-12 col-md-5 col-lg-5">
                   <img
-                    src={`http://localhost:5000/api/uploads/${product.file}`}
+                    src={`${import.meta.env.VITE_API_URL}/api/uploads/${
+                      product.file
+                    }`}
                     alt={product.name}
                     style={{ width: "300px", height: "400px" }}
                   />

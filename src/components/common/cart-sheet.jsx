@@ -110,7 +110,9 @@ const CartSheet = () => {
                         >
                           <img
                             className="item-image"
-                            src={`http://localhost:5000/api/uploads/${item.file}`}
+                            src={`${import.meta.env.VITE_API_URL}/api/uploads/${
+                              item.file
+                            }`}
                             alt={item.name}
                           />
                           <h6>{item.name}</h6>

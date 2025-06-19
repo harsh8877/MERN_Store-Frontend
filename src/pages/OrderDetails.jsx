@@ -221,7 +221,9 @@ const OrderDetails = () => {
                             <div className="d-flex justify-content-between flex-column flex-md-row">
                               <div className="d-flex align-items-center box">
                                 <img
-                                  src={`http://localhost:5000/api/uploads/${item.product.file}`}
+                                  src={`${
+                                    import.meta.env.VITE_API_URL
+                                  }/api/uploads/${item.product.file}`}
                                   alt={item.product.name}
                                   style={{
                                     width: "95px",

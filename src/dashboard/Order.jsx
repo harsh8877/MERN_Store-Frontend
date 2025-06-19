@@ -128,7 +128,9 @@ const Order = () => {
                                           >
                                             <div className="order-first-item p-lg-3">
                                               <img
-                                                src={`http://localhost:5000/api/uploads/${item.file}`}
+                                                src={`${
+                                                  import.meta.env.VITE_API_URL
+                                                }/api/uploads/${item.file}`}
                                                 alt={item.name}
                                                 style={{
                                                   width: "100px",

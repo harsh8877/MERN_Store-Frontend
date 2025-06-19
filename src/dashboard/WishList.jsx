@@ -62,7 +62,9 @@ const WishList = () => {
                           <li key={index} className="wishlist-item">
                             <div className="wishlist-image">
                               <img
-                                src={`http://localhost:5000/api/uploads/${product.file}`}
+                                src={`${
+                                  import.meta.env.VITE_API_URL
+                                }/api/uploads/${product.file}`}
                                 alt={product.name}
                               />
                             </div>

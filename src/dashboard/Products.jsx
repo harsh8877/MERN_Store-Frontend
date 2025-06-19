@@ -715,7 +715,9 @@ const Products = () => {
                                   >
                                     <div className="product-image">
                                       <img
-                                        src={`http://localhost:5000/api/uploads/${product.file}`}
+                                        src={`${
+                                          import.meta.env.VITE_API_URL
+                                        }/api/uploads/${product.file}`}
                                         alt={product.name}
                                       />
                                     </div>
